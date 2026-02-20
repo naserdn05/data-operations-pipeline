@@ -1,34 +1,46 @@
 # Data Operations Pipeline
 
-This project simulates a real-world data operations workflow used by data teams.
+A production-style data pipeline simulating real-world workflows 
+used by data engineering teams — built with Python and pandas.
 
-The pipeline includes three main stages:
+## Overview
 
-## 1. Data Ingestion
-Loads raw customer data from a CSV file.
+This project demonstrates core data operations skills including 
+ingestion, validation, and transformation of raw data — mirroring 
+workflows used in modern data platforms.
 
-## 2. Data Validation
-Checks for:
-- Missing values
-- Invalid formats
-- Data consistency issues
+## Pipeline Stages
 
-## 3. Data Processing
-Cleans and transforms the dataset:
-- Removes duplicates
-- Handles null values
-- Standardizes column names
-- Creates derived columns (total_price)
+### 1. Data Ingestion (`ingest.py`)
+- Loads data from CSV, JSON, or Parquet files
+- Structured logging with timestamps
+- Error handling for missing or unsupported files
 
-## Output
-A clean dataset ready for analytics:
-processed_customers.csv
+### 2. Data Validation (`validate.py`)
+- Detects and reports missing values with percentages
+- Identifies and removes duplicate rows
+- Logs data types and shape after validation
 
-## Technologies Used
-- Python
+### 3. Data Processing (`process.py`)
+- Normalizes column names
+- Fills missing values using median/mode strategies
+- Adds processing metadata timestamp
+
+## Tech Stack
+- Python 3.x
 - Pandas
-- Data Quality Checks
-- ETL Concepts
+- Logging module
 
-## Purpose
-This project demonstrates practical skills required for Data Analyst / Data Operations roles, including data cleaning, validation, and transformation.
+## How to Run
+```bash
+pip install pandas
+python ingest.py
+python validate.py
+python process.py
+```
+
+## Skills Demonstrated
+- ETL pipeline design
+- Data quality checks
+- Production-style logging
+- Error handling best practices
